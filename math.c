@@ -24,14 +24,26 @@ int _pow(int n, int i)
 	return (result);
 }
 
-int main(void)
+/**
+ * _mod - find the remainder of a number
+ * @n: the number
+ * @d: the divisor
+ *
+ * By: Sina Mathew
+ *
+ * Return: the remainder
+ */
+int _mod(int n, int d)
 {
-	int x;
-	int a = 9;
-	int b = 3;
+	int r;
 
-	x = _pow(a, b);
-	printf("%d power %d is %d.\n", a, b, x);
-
-	return (0);
+	if (d > n)
+		return (n);
+	else if (d == 0)
+		return(d);
+	else
+	{
+		r = n % d;
+		return (r);
+	}
 }
