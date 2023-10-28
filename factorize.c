@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #define MAX 200
 
 /**
@@ -8,19 +7,20 @@
  *
  * By: Sina Mathew
  */
-void factorize (int n)
+void factorize(int n)
 {
 	int i, p, q;
 
-	for (i = 2; i <= sqrt(n); i++)
+	for (i = 2; i * i <= n; i++)
 	{
 		if (n % i == 0)
 		{
 			p = i;
 			q = n / i;
+			break;
 		}
 	}
-	printf("%d=%d*%d\n", n, p, q);
+	printf("%d=%d*%d\n", n, q, p);
 }
 
 /**
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		if (sscanf(line, "%d", &n) ==1)
+		if (sscanf(line, "%d", &n) == 1)
 			factorize(n);
 	}
 
